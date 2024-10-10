@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import SignUp from "./components/SignUp.jsx";
 import About from "./components/About.jsx";
+import Login from "./components/Login.jsx";
 
 import "./App.css";
 
@@ -18,6 +19,9 @@ function App() {
             <Link to="/about">About</Link>
           </li>
           <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
             <Link to="/signup">SignUp</Link>
           </li>
         </ul>
@@ -27,6 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
     </BrowserRouter>
