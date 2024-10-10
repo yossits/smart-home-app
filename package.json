@@ -4,12 +4,19 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-private-property-in-object": "",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "amazon-cognito-identity-js": "^6.3.7",
+    "aws-amplify": "^6.0.13",
+    "aws-sdk": "^2.1550.0",
     "axios": "^1.6.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
@@ -40,7 +47,7 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^16.3.2",
-    "@babel/plugin-proposal-private-property-in-object": ""
+    "@babel/plugin-proposal-private-property-in-object": "",
+    "dotenv": "^16.3.2"
   }
 }
