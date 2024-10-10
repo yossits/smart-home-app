@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 
-import Home from "./components/Home.jsx";
+import Dashboard from "./components/Dashboard.jsx";
 import SignUp from "./components/SignUp.jsx";
 import About from "./components/About.jsx";
 import Login from "./components/Login.jsx";
@@ -13,7 +13,7 @@ function App() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Dashboard</Link>
           </li>
           <li>
             <Link to="/about">About</Link>
@@ -28,10 +28,11 @@ function App() {
       </nav>
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
+          {/* הגנה על המסלול */}
+          <Route path="/" element={<Dashboard />} />
         </Routes>
       </main>
     </BrowserRouter>

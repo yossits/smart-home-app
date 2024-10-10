@@ -2,16 +2,17 @@ import React from "react";
 
 import Device from "./Device.jsx";
 import DeviceConnectivity from "./DeviceConnectivity.jsx";
+import withAuth from "../auth/withAuth.js";
 
-const Home = () => {
+const Dashboard = () => {
   return (
     <div>
-      <h1>Home</h1>
-      <p>Welcome to home page!</p>
+      <h1>Dashboard</h1>
+      <p>Welcome to Dashboard page!</p>
       <Device/>
       <DeviceConnectivity/>
     </div>
   );
 };
 
-export default Home;
+export default withAuth(Dashboard);
