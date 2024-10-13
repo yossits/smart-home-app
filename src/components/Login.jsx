@@ -1,23 +1,31 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
-    const response = await fetch("http://localhost:5000/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json();
-    if (response.ok) {
-      localStorage.setItem("token", data.token);
-      alert("Login successful");
-    } else {
-      alert(data.message);
+    try {
+      const response = await fetch("https://www.tsarfati-yosef.com/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        localStorage.setItem("token", data.token); // שמירת ה-JWT ב-localStorage
+        alert("Login successful");
+        window.dispatchEvent(new Event('storage')); // עדכון ה-NAV
+        navigate("/dashboard"); // הפניה לדשבורד
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert("Error during login");
     }
   };
 

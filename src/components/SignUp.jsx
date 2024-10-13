@@ -5,15 +5,23 @@ const Signup = () => {
   const [password, setPassword] = useState("");
 
   const handleSignup = async () => {
-    const response = await fetch("http://localhost:5000/signup", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email, password }),
-    });
-    const data = await response.json();
-    alert(data.message);
+    try {
+      const response = await fetch("https://www.tsarfati-yosef.com/api/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        alert("User registered successfully");
+      } else {
+        alert(data.message);
+      }
+    } catch (error) {
+      alert("Error during signup");
+    }
   };
 
   return (
